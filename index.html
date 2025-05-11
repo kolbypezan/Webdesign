@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolby - Web Design</title> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6', // Blue
+                        secondary: '#10B981', // Green
+                        neutral: {
+                            100: '#F3F4F6',
+                            200: '#E5E7EB',
+                            700: '#374151',
+                            800: '#1F2937',
+                            900: '#111827',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a more polished look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Basic transition for hover effects */
+        button, a {
+            transition: all 0.3s ease-in-out;
+        }
+        .service-card:hover, .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-neutral-100 text-neutral-800 font-sans">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center text-2xl font-bold text-primary">
+                <span>Kolby Web Design</span>
+            </a>
+            <div class="space-x-4">
+                <a href="#home" class="text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="#services" class="text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                <a href="#portfolio" class="text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
+                <a href="#about" class="text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
+                <a href="#contact" class="bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium shadow-sm">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="bg-neutral-900 text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Creative Web Design Solutions</h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">I build stunning, responsive, and user-friendly websites that help your business grow. My websites are built from the ground up completely hand coded. That means no Wordpress or Squarespace.</p>
+            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transform hover:scale-105 transition duration-300">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral-900 mb-12">My Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card bg-neutral-100 p-8 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
+                    <div class="flex items-center justify-center h-16 w-16 bg-primary text-white rounded-full mb-6 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-neutral-800 mb-3">Custom Web Design</h3>
+                    <p class="text-neutral-600">Unique, tailor-made designs that reflect your brand's identity and engage your audience.</p>
+                </div>
+                <div class="service-card bg-neutral-100 p-8 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
+                    <div class="flex items-center justify-center h-16 w-16 bg-secondary text-white rounded-full mb-6 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-neutral-800 mb-3">Responsive Development</h3>
+                    <p class="text-neutral-600">Websites that look and perform flawlessly on all devices: desktops, tablets, and mobiles.</p>
+                </div>
+                <div class="service-card bg-neutral-100 p-8 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
+                     <div class="flex items-center justify-center h-16 w-16 bg-primary text-white rounded-full mb-6 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 012.25 4.5h.75m0 0H21m-9 12.75h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-neutral-800 mb-3">SEO Optimization</h3>
+                    <p class="text-neutral-600">Improve your site's visibility on search engines to attract more organic traffic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-16 md:py-24 bg-neutral-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral-900 mb-12">My Recent Work</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
+                    <img src="site1.png" alt="FLORES Committee" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-neutral-800 mb-2">Flores Committee</h3>
+                        <p class="text-neutral-600 text-sm mb-4">An informative landing page for a group dedicated to serving the latine community within the suburbs.</p>
+                        <a href="https://www.florescommittee.com" target="_blank" class="text-primary hover:underline font-medium">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
+                    <img src="site2.png" alt="Project Two" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-neutral-800 mb-2">Courtside.Bree</h3>
+                        <p class="text-neutral-600 text-sm mb-4">Photographer portfolio website including a form for booking photoshoots.</p>
+                        <a href="https://kolbypezan.github.io/CourtsideBree" target="_blank" class="text-secondary hover:underline font-medium">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
+                    <img src="site3.png" alt="Project Three" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-neutral-800 mb-2">Eva's dogsitting</h3>
+                        <p class="text-neutral-600 text-sm mb-4">A highly customized website for booking and contacting for dogsitting.</p>
+                        <a href="https://kolbypezan.github.io/Eva" target="_blank" class="text-yellow-500 hover:underline font-medium">View Project</a>
+                    </div>
+                </div>
+                </div>
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-secondary hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transform hover:scale-105 transition duration-300">See More & Discuss Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                <img src="https://placehold.co/500x500/9CA3AF/FFFFFF?text=Your+Photo" alt="Your Name" class="rounded-lg shadow-xl mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/500x500/cccccc/333333?text=Image+Not+Found';">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">About Me</h2>
+                <p class="text-neutral-700 mb-4 text-lg">Hi, my name is Kolb and I'm a passionate and dedicated web designer with 5 years of experience. I specialize in creating beautiful, functional, and user-centric websites that help businesses and individuals achieve their online goals.</p>
+                <p class="text-neutral-700 mb-4">My approach is collaborative. I work closely with my clients to understand their vision, requirements, and target audience, ensuring the final product is not just visually appealing but also strategically effective.</p>
+                <p class="text-neutral-700 mb-6">I'm proficient in modern web technologies including HTML, CSS, and JavaScript. Let's build something amazing together!</p>
+                <a href="#portfolio" class="text-primary hover:underline font-semibold text-lg">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-16 md:py-24 bg-neutral-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral-900 mb-12">What My Clients Say</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-neutral-600 italic mb-6">"The new website has really helped me expand my client base and connected me with a ton of perfect puppy clients. Thank you, Kolby!"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/50x50/3B82F6/FFFFFF?text=C1" alt="Client 1" class="w-12 h-12 rounded-full mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50/cccccc/333333?text=C';">
+                        <div>
+                            <p class="font-semibold text-neutral-800">Eva Ramos</p>
+                            <p class="text-sm text-neutral-500">Addison, IL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-neutral-600 italic mb-6">"That's bad*ss" "The website looks awesome!" "Omg this is SUPER COOL!! Thank u sm Kolby"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/50x50/10B981/FFFFFF?text=C2" alt="Client 2" class="w-12 h-12 rounded-full mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50/cccccc/333333?text=C';">
+                        <div>
+                            <p class="font-semibold text-neutral-800">Flores Members</p>
+                            <p class="text-sm text-neutral-500">Dupage, IL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="contact" class="py-16 md:py-24 bg-primary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-xl mx-auto">Let's discuss how I can help you create a stunning online presence. Get in touch for a free consultation and quote.</p>
+
+            <form id="contact-form" action="https://formspree.io/f/xqaqdbdv" method="POST" class="max-w-xl mx-auto bg-white text-neutral-800 p-8 rounded-lg shadow-2xl text-left">
+                <div class="mb-6">
+                    <label for="contact-name" class="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
+                    <input type="text" name="name" id="contact-name" placeholder="Your Name" required class="mt-1 block w-full px-4 py-3 border border-neutral-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm">
+                </div>
+                <div class="mb-6">
+                    <label for="contact-email" class="block text-sm font-medium text-neutral-700 mb-1">Email Address</label>
+                    <input type="email" name="_replyto" id="contact-email" placeholder="Your Email" required class="mt-1 block w-full px-4 py-3 border border-neutral-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm">
+                </div>
+                <div class="mb-6">
+                    <label for="contact-message" class="block text-sm font-medium text-neutral-700 mb-1">Message</label>
+                    <textarea name="Message" id="contact-message" rows="4" placeholder="Write a message..." required class="mt-1 block w-full px-4 py-3 border border-neutral-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-secondary hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-md transform hover:scale-105 transition duration-300">Send Message</button>
+                </div>
+            </form>
+
+            <div id="form-message" class="hidden max-w-xl mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mt-6 rounded-md shadow-md" role="alert">
+                <p class="font-bold">Success!</p>
+                <p>Thank you! Your message has been sent.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-neutral-900 text-neutral-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <a href="#home" class="flex items-center justify-center text-xl font-bold text-white">
+                     <img src="logo.png" alt="Kolby Web Designs Logo" class="h-7 w-auto mr-2 rounded-sm"> 
+                     <span>Kolby Web Designs</span>
+                </a>
+            </div>
+            <div class="space-x-6 mb-6">
+                <a href="#home" class="hover:text-primary">Home</a>
+                <a href="#services" class="hover:text-primary">Services</a>
+                <a href="#portfolio" class="hover:text-primary">Portfolio</a>
+                <a href="#about" class="hover:text-primary">About</a>
+                <a href="mailto:your.email@example.com" class="hover:text-primary">Kolbypezan@gmail.com</a>
+            </div>
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="#" class="text-neutral-400 hover:text-primary">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-primary">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974c0 4.406 2.857 8.145 6.831 9.495.498.09.684-.217.684-.483c0-.237-.008-.865-.013-1.695c-2.776.602-3.361-1.338-3.361-1.338c-.452-1.152-1.107-1.459-1.107-1.459c-.905-.619.069-.606.069-.606c1.002.07 1.527 1.028 1.527 1.028c.89 1.524 2.336 1.084 2.902.829c.091-.645.351-1.085.635-1.334c-2.214-.251-4.542-1.107-4.542-4.93c0-1.087.389-1.979 1.024-2.675c-.101-.253-.446-1.268.099-2.64c0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336a9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021c.545 1.372.203 2.387.099 2.64c.64.696 1.024 1.587 1.024 2.675c0 3.833-2.332 4.677-4.552 4.922c.355.308.675.916.675 1.846c0 1.334-.012 2.41-.012 2.737c0 .269.18.577.688.482A10.001 10.001 0 0 0 22 11.974C22 6.465 17.535 2 12.026 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-primary">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; <span id="currentYear"></span> Kolby Web Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  fetch('https://formspree.io/f/xqaqdbdv', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById('form-message').style.display = 'block';
+      form.reset();
+    } else {
+      response.json().then(data => {
+        alert(data.error || 'Oops! There was a problem.');
+      });
+    }
+  }).catch(error => {
+    alert('Oops! There was a problem submitting your form.');
+  });
+});
+</script>
+</body>
+</html>

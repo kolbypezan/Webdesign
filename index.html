@@ -1,344 +1,970 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kolby - Web Design</title>
-    <meta name="description" content="Kolby Web Design offers custom, hand-coded, and responsive websites. Specializing in creative web solutions to help your business grow.">
-    <link rel="canonical" href="https://kolbypezan.github.io/Webdesign/" />
-    <link rel="icon" type="image/png" href="logo1.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#3B82F6', // Blue
-                        secondary: '#10B981', // Green
-                        neutral: {
-                            100: '#F3F4F6',
-                            200: '#E5E7EB',
-                            700: '#374151',
-                            800: '#1F2937',
-                            900: '#111827',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Basic transition for hover effects */
-        button, a {
-            transition: all 0.3s ease-in-out;
-        }
-        .service-card:hover, .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLORES</title>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8ac9f7fb0f.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --primary: #005c5c;
+      --accent: #fcb900;
+      --bg-light: #f9f9f9;
+      --text-dark: #222;
+      --text-light: #fff;
+      --flower-pink: #f9a8d4;
+    }
+.event-info {
+  position: absolute;
+  left: 0%;
+  background-color: var(--primary); /* Green background with transparency */
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  z-index: 10;
+}
+.peciolo:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  .event-card:hover {
+    transform: translateY(-5px); /* This moves the card up by 5 pixels */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* This enhances the shadow */
+}
+     .shop button:hover, .shop a.button-style:hover {
+        background-color: #e0a800; /* Darker yellow */
+    }
+.flower-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Push it behind everything else */
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So it doesn't block interaction */
+  overflow: hidden;
+}
+#flower-section {
+  position: sticky;
+  z-index: 1;
+  background: white;
+  height: 2000px; /* or whatever fits your layout */
+}
+.container{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+    width:350px;
+    height:510px;
+}
+@keyframes rotate{
+  100%{transform: rotate(360deg);}
+}
+.pot{
+  position: absolute;
+  width: 70px;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent; 
+  border-top: 60px solid #FF7043;
+  bottom: 104px;
+  left: 125px;
+  z-index: 2;
+}
+.pot:before{
+  position: absolute;
+  content: '';
+  width: 87px;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;  
+  border-top: 9px solid #F4511E;
+  top: -60px;
+  left: -12px;
+}
+.pot:after{
+  position: absolute;
+  content: '';
+  width: 110px;
+  height: 18px;
+  top: -78px;
+  left: -20px;
+  border-radius: 5px;
+  background-color: #FF7043;
+}
+@keyframes show{
+  5%{opacity: 1;}
+  7%{transform: rotate(40deg);}
+  24%{opacity: 1;}
+  25%{opacity: 0;}
+}
+@keyframes water{
+  7%{opacity: 0;}
+  8%{opacity: 1;}
+  21%{opacity: 1;}
+  22%{opacity: 0;}
+}
+.flower{
+  position: absolute;
+  bottom: 180px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 50px;
+  transform: rotate(180deg);
+}
+.stem{
+  position: absolute;
+  left: 25px;
+  width: 5px;
+  height: 0px;
+  background: linear-gradient(-90deg, #0d0, #0a0);
+}
+@keyframes grow{
+  25%{height: 0;}
+  34%{height: 22px;}
+  39%{height: 22px;}
+  41%{height: 27px;}
+  45%{height: 27px;}
+  52%{height: 92px;}
+  55%{height: 94px;}
+  100%{height: 120px;}
+}
+.leaf{
+  position: absolute;
+  width: 25px;
+  top: -10px;
+  left: 18px;
+  height: 38px;
+  border-radius: 1% 100%;
+  background: linear-gradient(70deg, #0e0, #0a0);
+  transform-origin: bottom;
+  transform: rotate(-110deg);
+}
+@keyframes leaf-1{
+  0%{transform: scaleY(0) rotate(-180deg);}
+  38%{transform: scaleY(0) rotate(-110deg);}
+  50%{transform: scaleY(1) rotate(-110deg);}
+}
+.leaf:before{
+  position: absolute;
+  content: '';
+  top: 18px;
+  left: -33px;
+  width: 30px;
+  height: 45px;
+  border-radius: 1% 100%;
+  background: linear-gradient(70deg, #0e0, #0a0);
+  transform: rotate(110deg);
+}
+@keyframes leaf-2{
+  0%{transform: scaleY(0) rotate(110deg);}
+  45%{transform: scaleY(0) rotate(110deg);}
+  52%{transform: scaleY(1) rotate(110deg);}
+}
+.leaf:after{
+  position: absolute;
+  content: '';
+  top: -20px;
+  left: -60px;
+  width: 25px;
+  height: 35px;
+  border-radius: 1% 100%;
+  background: linear-gradient(70deg, #0e0, #0a0);
+  transform-origin: bottom;
+}
+@keyframes leaf-3{
+  0%{transform: scaleY(0);}
+  55%{transform: scaleY(0);}
+  72%{transform: scaleY(1);}
+}
+.dot{
+  position: absolute;
+  top: 147px;
+  left: 24px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #f8d545;
+  box-shadow: 0 0 0 4px #d85,
+        0 0 8px 4px #444,
+        inset 0 0 8px #fd0;
+  opacity: 0;
+}
+@keyframes flower{
+  72%{opacity: 0;}
+  74%{opacity: 1;}
+  100%{opacity: 1;}
+}
+.petal{
+  position: absolute;
+  width: 0px;
+  height: 40px;
+  border-radius: 100% 0% 50% 50% /50% 0% 100% 50%;
+  background: linear-gradient(
+  185deg,
+    #941346 0%,
+    #E63B94 50%,
+    #FF5AB0 75%,
+    #FF7DC1 100%
+  );
+  opacity: 0;
+}
+@keyframes petal{
+  72%{opacity: 0;}
+  84%{opacity: 1; width: 40px;}
+  100%{opacity: 1; width: 40px;}
+}
+.petal-1{
+  top: 155px;
+  left: -9px;
+}
+.petal-2{
+  top: 125px;
+  left: -18px;
+  transform: rotate(60deg);
+}
+.petal-3{
+  top: 105px;
+  left: 5px;
+  transform: rotate(120deg);
+}
+.petal-4{
+  top: 110px;
+  left: 35px;
+  transform: rotate(180deg);
+}
+.petal-5{
+  top: 140px;
+  left: 42px;
+  transform: rotate(240deg);
+}
+.petal-6{
+  top: 160px;
+  left: 18px;
+  transform: rotate(300deg);
+}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+      .download-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .download-btn:hover {
+      background: grey;
+      color: white;
+    }
+    form input, form textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+.carousel {
+  position: relative;
+  width: 100vw; /* Ensures the carousel takes the full width of the viewport */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container {
+  display: flex;
+  width: 100%;
+}
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.carousel-item {
+  flex-shrink: 0; 
+  width: 100vw; 
+  height: 100vh; 
+  object-fit: cover; 
+}
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+.carousel-prev {
+  left: 10px;
+}
+.carousel-next {
+  right: 10px;
+}
+.carousel-prev:hover, .carousel-next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.logo-combo {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  position: relative; 
+  margin-top: -50px; 
+  z-index: 2; 
+}
+.logo-combo img {
+  max-height: 42px;
+  margin-top: 0;
+}
+.logo-text-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  color: white;
+  align-items: flex-start;
+}
+.logo-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.logo-subtitle {
+  font-size: 0.75rem;
+  line-height: 1.1;
+  max-width: 280px;
+  margin-top: -8px;
+}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-attachment: fixed;
+      background-size: cover;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--primary);
+      color: var(--text-light);
+    }
+  .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  background-color: var(--primary);
+}
+ .language-toggle {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; 
+  padding-bottom: 1rem;
+}
+.language-toggle button {
+  background: none;
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0.0rem 1rem;
+      background-color: var(--primary);
+    }
+   .logo img {
+  max-height: 100px; 
+}
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .hero {
+  padding: 3rem 2rem; 
+  text-align: center;
+  color: var(--text-light);
+  background-color: var(--primary);
+}
+   .hero h1 {
+  font-size: 3rem;
+  margin: 0; 
+}
+.hero p {
+  padding: 3rem 2rem;
+  font-size: 1.25rem;
+  margin-top: 0.5rem; 
+}
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .about, .events, .contact, .shop {
+      background-color: var(--bg-light);
+    }
+    .subcommittees .peciolo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .peciolo {
+      background-color: var(--flower-pink);
+      padding: 1rem;
+      border-radius: 10px;
+      color: #222;
+      font-weight: bold;
+    }
+    .events ul {
+      list-style: none;
+      padding: 0;
+    }
+    .events li {
+      padding: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .shop button {
+      padding: 0.7rem 1.5rem;
+      background-color: var(--accent);
+      color: var(--text-dark);
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact label {
+      font-weight: bold;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+   .menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+  z-index: 1001;
+}
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.3s; 
+}
+
+    @media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+   .logo-combo {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 0;
+  }
+  .logo-combo img {
+    max-height: 36px;
+  }
+  .logo-text-row {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .logo-subtitle {
+    display: none; 
+  }
+   .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--primary);
+    align-items: center; 
+    padding: 0rem;
+  }
+  .nav-links.show {
+    display: flex;
+    padding: 0rem;
+  }
+  .nav-links li {
+    padding: 0rem;
+    text-align: center;
+  }
+   .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+  }
+  .nav-links li.social-media {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  .language-toggle {
+    margin-top: 1rem; 
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+     .carousel-item {
+    height: 30vh; 
+  }
+}
+  </style>
 </head>
-<body class="bg-neutral-100 text-neutral-800 font-sans">
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-3"> <div class="flex justify-between items-center">
-                <a href="#home" class="flex items-center text-2xl font-bold text-primary">
-                     <img src="logo1.png" alt="Kolby Web Design Logo" class="w-10 h-10 object-cover mr-3 rounded-sm" onerror="this.onerror=null;this.src='https://placehold.co/40x40/cccccc/333333?text=Logo';">
-                     <span>Kolby Web Design</span>
-                </a>
-                <div class="hidden md:flex space-x-4">
-                    <a href="#home" class="text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="#services" class="text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Services</a>
-                    <a href="#portfolio" class="text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
-                    <a href="#about" class="text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
-                    <a href="#contact" class="bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium shadow-sm">Contact</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-neutral-700 hover:text-primary focus:outline-none focus:text-primary">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden mt-2">
-                <a href="#home" class="block text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="#services" class="block text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Services</a>
-                <a href="#portfolio" class="block text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
-                <a href="#about" class="block text-neutral-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#contact" class="block bg-primary text-white hover:bg-blue-700 mt-1 px-3 py-2 rounded-md text-base font-medium shadow-sm">Contact</a>
-            </div>
-        </nav>
-    </header>
-
-    <section id="home" class="bg-neutral-900 text-white py-20 md:py-32">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Creative Web Design Solutions</h1>
-            <p class="text-lg md:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">I build stunning, responsive, and user-friendly websites that help your business grow. My websites are built from the ground up completely hand coded. That means no Wordpress or Squarespace.</p>
-            <a href="#contact" class="bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transform hover:scale-105 transition duration-300">Get a Free Quote</a>
+<body>
+ <header>
+  <div class="top-bar">
+    <div class="social-links">
+    </div>
+  </div>
+  <nav>
+    <div class="logo-combo">
+      <img src="logo.png" alt="FLORES Logo">
+      <div class="logo-text-row">
+        <div class="logo-title">FLORES</div>
+        <div data-i18n="subtitle" class="logo-subtitle">
+          Fellow Latine Organizers Reconnecting<br>
+          and Educating in the Suburbs
         </div>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="nav-links" style="font-size: 1.3rem; ">
+      <li><a href="#about" data-i18n="about">About</a></li>
+      <li><a href="#subcommittees" data-i18n="peciolos">Peciolos</a></li>
+      <li><a href="#events" data-i18n="events">Events</a></li>
+      <li><a href="#shop" data-i18n="shop">Shop</a></li>
+      <li><a href="#contact" data-i18n="contact">Contact</a></li>
+      <li class="social-media">
+      <a style="padding-right: 1rem;" href="https://www.tiktok.com/@flores.youth.committee?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+      <a style="padding-right: 1rem;" href="https://www.instagram.com/flores_youth_committee?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://bsky.app/profile/florescommittee.bsky.social" target="_blank" rel="noopener"><i class="fa-brands fa-bluesky"></i></a>
+    </li>
+    </ul>
+     <div class="language-toggle">
+    <button onclick="toggleLanguage()">ES / EN</button>
+  </div>
+  </nav>
+</header>
+<section class="carousel">
+  <div class="carousel-container">
+    <div class="carousel-images">
+      <img src="image1.jpg" alt="Image 1" class="carousel-item">
+      <img src="image2.jpg" alt="Image 2" class="carousel-item">
+      <img src="image3.jpg" alt="Image 3" class="carousel-item">
+    </div>
+    <button class="carousel-prev" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="carousel-next" onclick="moveCarousel(1)">&#10095;</button>
+  </div>
+</section>
+  <main>
+   <div class="flower-background">
+  <div class="container">
+    <div class="sun">
+      <div class="sunrays"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="shadow"></div>
+    <div class="pot"></div>
+    <div class="water-jar"></div>
+    <div class="water"></div>
+    <div class="flower">
+      <div class="stem"></div>
+      <div class="leaf"></div>
+      <div class="petal petal-1"></div>
+      <div class="petal petal-2"></div>
+      <div class="petal petal-3"></div>
+      <div class="petal petal-4"></div>
+      <div class="petal petal-5"></div>
+      <div class="petal petal-6"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+</section>
+    <section id="about" class="about">
+      <h2 class="text-3xl font-bold text-black mb-12 text-center" data-i18n="missionTitle">Our Mission</h2>
+      <p data-i18n="missionText">Like flowers, FLORES (Fellow Latine Organizers Reconnecting and Educating in the Suburbs) nurtures the growth of Latine leadership and community in suburban areas. We blossom through shared knowledge via popular education, enrich our soil through community service, and honor our roots with a deep connection to Pachamama, cultivating a thriving network of engaged organizers.</p>
     </section>
 
-    <section id="services" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral-900 mb-12">My Services</h2>
-            <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8"> <div class="service-card bg-neutral-100 p-8 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
-                    <div class="flex items-center justify-center h-16 w-16 bg-primary text-white rounded-full mb-6 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-neutral-800 mb-3">Custom Web Design</h3>
-                    <p class="text-neutral-600">Unique, tailor-made designs that reflect your brand's identity and engage your audience.</p>
-                </div>
-                <div class="service-card bg-neutral-100 p-8 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
-                    <div class="flex items-center justify-center h-16 w-16 bg-secondary text-white rounded-full mb-6 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-neutral-800 mb-3">Responsive Development</h3>
-                    <p class="text-neutral-600">Websites that look and perform flawlessly on all devices: desktops, tablets, and mobiles.</p>
-                </div>
-                <div class="service-card bg-neutral-100 p-8 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
-                     <div class="flex items-center justify-center h-16 w-16 bg-primary text-white rounded-full mb-6 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 012.25 4.5h.75m0 0H21m-9 12.75h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-neutral-800 mb-3">SEO Optimization</h3>
-                    <p class="text-neutral-600">Improve your site's visibility on search engines to attract more organic traffic.</p>
-                </div>
-            </div>
+   <section id="subcommittees" class="subcommittees bg-teal-50 py-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center" data-i18n="peciolos">Peciolos</h2>
+      <p class="text-lg text-gray-700 mb-10 text-center" data-i18n="peciolosIntro">Our work is organized into several key areas, our "peciolos," each focusing on a vital aspect of community empowerment.</p>
+      <div class="peciolo-list grid md:grid-cols-3 gap-8">
+        <div class="peciolo text-center p-6 shadow-md hover:shadow-lg transition-shadow">
+            <i class="fas fa-users text-3xl text-primary mb-3"></i>
+            <h3 class="text-xl font-semibold" data-i18n="ep">Popular Education</h3>
         </div>
-    </section>
-
-    <section id="portfolio" class="py-16 md:py-24 bg-neutral-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral-900 mb-12">My Recent Work</h2>
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
-                    <img src="site1.png" alt="FLORES Committee Website Screenshot" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-neutral-800 mb-2">Flores Committee</h3>
-                        <p class="text-neutral-600 text-sm mb-4">An informative landing page for a group dedicated to serving the latine community within the suburbs.</p>
-                        <a href="https://www.florescommittee.com" target="_blank" class="text-primary hover:underline font-medium">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
-                    <img src="site2.png" alt="Courtside.Bree Photographer Portfolio Screenshot" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-neutral-800 mb-2">Courtside.Bree</h3>
-                        <p class="text-neutral-600 text-sm mb-4">Photographer portfolio website including a form for booking photoshoots.</p>
-                        <a href="https://kolbypezan.github.io/CourtsideBree" target="_blank" class="text-secondary hover:underline font-medium">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
-                    <img src="site3.png" alt="Eva's Dogsitting Website Screenshot" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-neutral-800 mb-2">Eva's dogsitting</h3>
-                        <p class="text-neutral-600 text-sm mb-4">A highly customized website for booking and contacting for dogsitting.</p>
-                        <a href="https://kolbypezan.github.io/Eva" target="_blank" class="text-yellow-500 hover:underline font-medium">View Project</a>
-                    </div>
-                </div>
-                </div> <div class="text-center mt-12">
-                <a href="#contact" class="bg-secondary hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transform hover:scale-105 transition duration-300">See More & Discuss Your Project</a>
-            </div>
+        <div class="peciolo text-center p-6 shadow-md hover:shadow-lg transition-shadow">
+            <i class="fas fa-hands-helping text-3xl text-primary mb-3"></i>
+            <h3 class="text-xl font-semibold" data-i18n="cs">Community Service</h3>
         </div>
-    </section>
-
-    <section id="about" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 lg:pr-12"> <img src="me.jpg" alt="Photo of Kolby Pezan" class="rounded-lg shadow-xl mx-auto w-full max-w-md" onerror="this.onerror=null;this.src='https://placehold.co/500x500/cccccc/333333?text=Image+Not+Found';">
-            </div>
-            <div class="md:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">About Me</h2>
-                <p class="text-neutral-700 mb-4 text-lg">Hi, my name is Kolby and I'm a passionate and dedicated web designer with 5 years of experience. I specialize in creating beautiful, functional, and user-centric websites that help businesses and individuals achieve their online goals.</p>
-                <p class="text-neutral-700 mb-4">My approach is collaborative. I work closely with my clients to understand their vision, requirements, and target audience, ensuring the final product is not just visually appealing but also strategically effective.</p>
-                <p class="text-neutral-700 mb-6">I'm proficient in modern coding languages like HTML, CSS, and JavaScript. Let's build something amazing together!</p>
-                <a href="#portfolio" class="text-primary hover:underline font-semibold text-lg">View My Work</a>
-            </div>
+        <div class="peciolo text-center p-6 shadow-md hover:shadow-lg transition-shadow">
+            <i class="fas fa-leaf text-3xl text-primary mb-3"></i>
+            <h3 class="text-xl font-semibold" data-i18n="pacha">Pachamama</h3>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="testimonials" class="py-16 md:py-24 bg-neutral-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral-900 mb-12">What My Clients Say</h2>
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8"> <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <p class="text-neutral-600 italic mb-6">"The new website has really helped me expand my client base and connected me with a ton of perfect puppy clients. Thank you, Kolby!"</p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/50x50/3B82F6/FFFFFF?text=E" alt="Eva Ramos - Client Testimonial" class="w-12 h-12 rounded-full mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50/cccccc/333333?text=C';">
-                        <div>
-                            <p class="font-semibold text-neutral-800">Eva Ramos</p>
-                            <p class="text-sm text-neutral-500">Addison, IL</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <p class="text-neutral-600 italic mb-6">"That's bad*ss" "The website looks awesome!" "Omg this is SUPER COOL!! Thank u sm Kolby"</p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/50x50/10B981/FFFFFF?text=F" alt="Flores Members - Client Testimonial" class="w-12 h-12 rounded-full mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50/cccccc/333333?text=C';">
-                        <div>
-                            <p class="font-semibold text-neutral-800">Flores Members</p>
-                            <p class="text-sm text-neutral-500">Dupage, IL</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="events" class="bg-teal-900 py-16 px-4">
+  <div class="max-w-7xl mx-auto">
+    <h2 data-i18n="upcomingevents" class="text-3xl font-bold text-black mb-12 text-center">Upcoming Events</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Event 1 -->
+     <div class="bg-white rounded-xl shadow-md overflow-hidden relative event-card">
+       <div class="absolute top-0 left-0 text-white text-center px-4 py-2 rounded-br-xl z-20 event-info">
+          <p class="text-2xl font-bold leading-none">13</p>
+          <p class="text-sm uppercase">May 2025</p>
         </div>
-    </section>
-
-        <section id="contact" class="py-16 md:py-24 bg-primary text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-            <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-xl mx-auto">Let's discuss how I can help you create a stunning online presence. Get in touch for a free consultation and quote.</p>
-
-            <form id="contact-form" action="https://formspree.io/f/xqaqdbdv" method="POST" class="max-w-xl mx-auto bg-white text-neutral-800 p-6 sm:p-8 rounded-lg shadow-2xl text-left"> <div class="mb-6">
-                    <label for="contact-name" class="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
-                    <input type="text" name="name" id="contact-name" placeholder="Your Name" required class="mt-1 block w-full px-4 py-3 border border-neutral-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm">
-                </div>
-                <div class="mb-6">
-                    <label for="contact-email" class="block text-sm font-medium text-neutral-700 mb-1">Email Address</label>
-                    <input type="email" name="_replyto" id="contact-email" placeholder="Your Email" required class="mt-1 block w-full px-4 py-3 border border-neutral-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm">
-                </div>
-                <div class="mb-6">
-                    <label for="contact-message" class="block text-sm font-medium text-neutral-700 mb-1">Message</label>
-                    <textarea name="Message" id="contact-message" rows="4" placeholder="Write a message..." required class="mt-1 block w-full px-4 py-3 border border-neutral-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"></textarea>
-                </div>
-                <div>
-                    <button type="submit" class="w-full bg-secondary hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-md transform hover:scale-105 transition duration-300">Send Message</button>
-                </div>
-            </form>
-
-            <div id="form-message" class="hidden max-w-xl mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mt-6 rounded-md shadow-md" role="alert">
-                <p class="font-bold">Success!</p>
-                <p>Thank you! Your message has been sent.</p>
-            </div>
+        <img src="event1.jpg" alt="Event 1" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 data-i18n="eventtitle1" class="text-xl font-semibold text-teal-900 mb-2"> FLORES First Movie Night</h3>
+          <p data-i18n="eventdescription1" class="text-gray-700 text-sm mb-4">We will be watching even the rain at Casa Dupage placeholder description...</p>
+          <a target="_blank" href="https://www.instagram.com/p/DHW9myvunGG/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" class="inline-block bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 font-semibold">Learn More</a>
         </div>
-    </section>
-    <footer class="bg-neutral-900 text-neutral-300 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <div class="mb-4">
-                <a href="#home" class="flex items-center justify-center text-xl font-bold text-white">
-                     <img src="logo1.png" alt="Kolby Web Designs Logo" class="h-7 w-auto mr-2 rounded-sm">
-                     <span>Kolby Web Designs</span>
-                </a>
-            </div>
-           <div class="flex justify-center space-x-4 mb-6">
-                <a href="https://www.facebook.com/people/Kolby-web-design/61576204350062/?mibextid=wwXIfr&rdid=HBA1dFHf2Azo1nr2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CYSbMoCr6%2F%3Fmibextid%3DwwXIfr%26wtsid%3Drdr_09L0etXRp6a8cgWns%26_rdr" target="_blank" class="text-neutral-400 hover:text-primary text-2xl">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/kolby_webdesign/?utm_source=ig_web_button_share_sheet" target="_blank" class="text-neutral-400 hover:text-primary text-2xl">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@kolby_webdesign?is_from_webapp=1&sender_device=pc" target="_blank" class="text-neutral-400 hover:text-primary text-2xl">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-            </div>
-            <p class="text-sm">&copy; <span id="currentYear"></span> Kolby Web Designs. All rights reserved.</p>
+      </div>
+
+      <!-- Event 2 -->
+   <div class="relative bg-white rounded-xl shadow-md overflow-hidden event-card">
+  <!-- Date box -->
+  <div class="absolute top-0 left-0 text-white text-center px-4 py-2 rounded-br-xl z-20 event-info">
+    <p class="text-2xl font-bold leading-none ">13</p>
+    <p class="text-sm uppercase ">May 2025</p>
+  </div>
+
+  <!-- Image -->
+  <img src="event2.jpg" alt="Event 1" class="w-full h-64 object-cover">
+
+  <!-- Text -->
+  <div class="p-6">
+    <h3 data-i18n="eventtitle2" class="text-xl font-semibold text-teal-900 mb-2">FLORES Second Event </h3>
+    <p data-i18n="eventdescription2" class="text-gray-700 text-sm mb-4">Event 2 description</p>
+    <a target="_blank" href="https://www.instagram.com/p/DGOpifMu0Ad/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" class="inline-block bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 font-semibold">Learn More</a>
+  </div>
+</div>
+  
+      <!-- Event 3 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden relative event-card">
+         <div class="absolute top-0 left-0 text-white text-center px-4 py-2 rounded-br-xl z-20 event-info">
+          <p data-i18n="event3number" class="text-2xl font-bold leading-none ">Reoccuring</p>
+          <p data-i18n="event3date" class="text-sm uppercase ">Every Wednesday</p>
         </div>
-    </footer>
+        <img src="event3.jpg" alt="Event 2" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 data-i18n="eventtitle3" class="text-xl font-semibold text-teal-900 mb-2">FLORES Meeting</h3>
+          <p data-i18n="eventdescription3" class="text-gray-700 text-sm mb-4">Meetings for community placeholder...</p>
+          <a target="_blank" href="https://www.instagram.com/p/DGdnpMHO_WH/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" class="inline-block bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 font-semibold">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section id="shop" class="shop">
+      <h2 class="text-3xl font-bold text-black mb-12 text-center" data-i18n="shopTitle">Support FLORES</h2>
+       <p class="text-lg text-gray-700 mb-12 text-center max-w-2xl mx-auto" data-i18n="shopText">
+        Help us continue our work by purchasing our merchandise or making a donation. Every contribution makes a difference!
+      </p>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                // If the link is part of the mobile menu, close the menu first
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (mobileMenu && !mobileMenu.classList.contains('hidden') && this.closest('#mobile-menu')) {
-                    mobileMenu.classList.add('hidden');
-                }
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Offset for sticky header if needed, adjust the value (e.g., 60px)
-                    // const headerOffset = 60; 
-                    // const elementPosition = targetElement.getBoundingClientRect().top;
-                    // const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
-                    // window.scrollTo({
-                    //      top: offsetPosition,
-                    //      behavior: "smooth"
-                    // });
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-6 transform hover:scale-105 transition-transform duration-300">
+          <img src="shirt.png?text=FLORES+T-Shirt&font=raleway" alt="FLORES T-Shirt" class="w-full h-64 object-contain mb-4 rounded">
+          <h3 class="text-2xl font-semibold text-teal-900 mb-2" data-i18n="shirtname">FLORES T-Shirt</h3>
+          <p class="text-gray-600 text-sm mb-3 text-center" data-i18n="shirtdesc">Show your support with our official FLORES T-Shirt. Made from 100% organic cotton.</p>
+          <p class="text-xl font-bold text-teal-700 mb-5" data-i18n="shirtprice">$25.00</p>
+          <a href="#" class="mt-auto inline-block bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg hover:bg-yellow-600 font-semibold text-md transition-colors" data-i18n="buyButton">Buy T-Shirt</a>
+        </div>
 
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-6 transform hover:scale-105 transition-transform duration-300">
+          <img src="sticker.png?text=FLORES+Sticker&font=raleway" alt="FLORES Sticker" class="w-full h-64 object-contain mb-4 rounded">
+          <h3 class="text-2xl font-semibold text-teal-900 mb-2" data-i18n="stickername">FLORES Sticker</h3>
+          <p class="text-gray-600 text-sm mb-3 text-center" data-i18n="stickerdesc">High-quality vinyl sticker, perfect for laptops, water bottles, and more!</p>
+          <p class="text-xl font-bold text-teal-700 mb-5" data-i18n="stickerPrice">$5.00</p>
+          <a href="#" class="mt-auto inline-block bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg hover:bg-yellow-600 font-semibold text-md transition-colors" data-i18n="buyButton">Buy Sticker</a>
+        </div>
+        
+         <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-6 transform hover:scale-105 transition-transform duration-300">
+          <img src="donation.png?text=FLORES+Donation&font=raleway" alt="FLORES Sticker" class="w-full h-64 object-contain mb-4 rounded">
+            <i class="fas fa-hand-holding-heart text-5xl text-yellow-400 mb-4"></i>
+            <h3 class="text-2xl font-semibold text-teal-900 mb-2" data-i18n="donateTitle">Make a Donation</h3>
+            <p class="text-gray-600 text-sm mb-3 text-center" data-i18n="donateDesc">Your generous donations help us fund our programs and initiatives. Support FLORES today!</p>
+            <a href="#" class="mt-auto inline-block bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg hover:bg-yellow-600 font-semibold text-md transition-colors" data-i18n="donateButton">Donate Now</a>
+        </div>
 
-        // Hamburger Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+      </div>
+    </div>
+  </section>
 
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+     <section id="contact">
+    <h2 data-i18n="contact" class="text-3xl font-bold text-black mb-12 text-center" >Contact Us</h2>
+    <form id="contact-form" style="max-width: 600px; margin: auto;">
+      <input type="text" name="name" placeholder="Name / Nombre" required>
+      <input type="email" name="_replyto" placeholder="Email / Correo Electrónico" required>
+      <textarea name="message" placeholder="Message / Mensaje" required></textarea>
+      <button type="submit" class="download-btn">Send</button>
+    </form>
+    <div id="form-message" style="display:none;" data-i18n="thanks" >Thank you!</div>
+  </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FLORES. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let currentIndex = 0;
+
+function moveCarousel(direction) {
+  const items = document.querySelectorAll('.carousel-item');
+  const totalItems = items.length;
+  currentIndex += direction;
+
+  if (currentIndex < 0) {
+    currentIndex = totalItems - 1;
+  } else if (currentIndex >= totalItems) {
+    currentIndex = 0;
+  }
+
+  const carousel = document.querySelector('.carousel-images');
+  const newTransformValue = -currentIndex * 100;
+  carousel.style.transform = `translateX(${newTransformValue}%)`;
+}
+
+    const translations = {
+      es: {
+        peciolosIntro: "Nuestro trabajo se organiza en varias áreas clave, nuestros \"peciolos\", cada uno centrado en un aspecto vital del empoderamiento comunitario.",
+        shirtname: "Camiseta FLORES",
+      shirtdesc: "Muestra tu apoyo con nuestra camiseta oficial de FLORES. Hecha de algodón 100% orgánico.",
+      shirtprice: "$25.00",
+      stickername: "Calcomanía FLORES",
+      stickerdesc: "Calcomanía de vinilo de alta calidad, ¡perfecta para laptops, botellas de agua y más!",
+      stickerPrice: "$5.00",
+      buyButton: "Comprar",
+      donateTitle: "Haz una Donación",
+      donateDesc: "Tus generosas donaciones nos ayudan a financiar nuestros programas e iniciativas. ¡Apoya a FLORES hoy!",
+      donateButton: "Donar Ahora",
+        thanks: "¡Gracias!",
+        comingsoon: "Muy pronto!",
+        event3number: "Periódico",
+        event3date: "Todos Los Miercoles",
+        eventtitle1: "FLORES Primera Noche de Cine",
+        eventtitle2: "FLORES Segundo Evento",
+        eventtitle3: "Reunión FLORES",
+        eventdescription1: "Estaremos viendo hasta la lluvia en Casa Dupage marcador de posición descripción...",
+        eventdescription2: "Descripción del evento 2",
+        eventdescription3: "Reuniones para el marcador de posición de la comunidad...",
+        upcomingevents: "Próximos Eventos",
+        about: "Sobre Nosotros",
+        subtitle: "Organizadores Latines Reuniéndose <br> y Educando en los Suburbios",
+        missionTitle: "Nuestra Misión",
+        missionText: "Como flores, FLORES (Organizadores Latinos que Reconectan y Educan en los Suburbios) impulsa el crecimiento del liderazgo y la comunidad latina en las zonas suburbanas. Florecemos compartiendo conocimiento mediante la educación popular, enriquecemos nuestra tierra con el servicio comunitario y honramos nuestras raíces con una profunda conexión con la Pachamama, cultivando una próspera red de organizadores comprometidos.",
+        peciolos: "Peciolos",
+        ep: "Educación Popular",
+        cs: "Servicio Comunitario",
+        pacha: "Pachamama",
+        events: "Eventos",
+        movie: "Noches de Cine",
+        dance: "Bailes",
+        fund: "Recaudaciones",
+        shop: "Tienda",
+        shopTitle: "Apoya a FLORES",
+        shopText: "Ayúdanos a continuar nuestra labor comprando nuestros productos o haciendo una donación. ¡Cada contribución marca la diferencia!",
+        shopBtn: "Visitar Tienda",
+        contact: "Contáctanos",
+        name: "Nombre:",
+        email: "Correo electrónico:",
+        message: "Mensaje:",
+        send: "Enviar"
+      },
+      en: {
+        peciolosIntro: "Our work is organized into several key areas, our \"peciolos,\" each focusing on a vital aspect of community empowerment.",
+        shirtname: "FLORES T-Shirt",
+      shirtdesc: "Show your support with our official FLORES T-Shirt. Made from 100% organic cotton.",
+      shirtprice: "$25.00",
+      stickername: "FLORES Sticker",
+      stickerdesc: "High-quality vinyl sticker, perfect for laptops, water bottles, and more!",
+      stickerprice: "$5.00",
+      buyButton: "Buy Now",
+      donateTitle: "Make a Donation",
+      donateDesc: "Your generous donations help us fund our programs and initiatives. Support FLORES today!",
+      donateButton: "Donate Now",
+        thanks:"Thank you!",
+        comingsoon: "Coming soon!",
+        event3number: "Reoccuring",
+        event3date: "Every Wednesday",
+        eventtitle1: "FLORES First Movie Night",
+        eventtitle2: "FLORES Second Event",
+        eventtitle3: "FLORES Meeting",
+        eventdescription1: "We will be watching even the rain at Casa Dupage placeholder description...",
+        eventdescription2: "Event 2 description",
+        eventdescription3: "Meetings for community placeholder...",
+        upcomingevents: "Upcoming Events",
+        about: "About",
+        subtitle: "Fellow Latine Organizers Reconnecting <br> and Educating in the Suburbs",
+        missionTitle: "Our Mission",
+        missionText: "Like flowers, FLORES (Fellow Latine Organizers Reconnecting and Educating in the Suburbs) nurtures the growth of Latine leadership and community in suburban areas. We blossom through shared knowledge via popular education, enrich our soil through community service, and honor our roots with a deep connection to Pachamama, cultivating a thriving network of engaged organizers.",
+        peciolos: "Peciolos",
+        ep: "Popular Education",
+        cs: "Community Service",
+        pacha: "Pachamama",
+        events: "Events",
+        movie: "Movie Nights",
+        dance: "Dances",
+        fund: "Fundraisers",
+        shop: "Shop",
+        shopTitle: "Support FLORES",
+        shopText: " Help us continue our work by purchasing our merchandise or making a donation. Every contribution makes a difference!",
+        shopBtn: "Visit Shop",
+        contact: "Contact Us",
+        name: "Name:",
+        email: "Email:",
+        message: "Message:",
+        send: "Send"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[currentLang][key]) {
+          el.textContent = translations[currentLang][key];
+          el.innerHTML = translations[currentLang][key];
         }
+      });
+    }
 
-    </script>
-    <script>
-        // User's Formspree submission handler
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(event) {
-              event.preventDefault();
+    window.addEventListener('scroll', () => {
+      document.body.style.backgroundPositionY = `${window.scrollY * 0.5}px`;
+    });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-              const form = event.target;
-              const formData = new FormData(form);
+    menuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('show');
+    });
+  });
+</script>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-              fetch('https://formspree.io/f/xqaqdbdv', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                  'Accept': 'application/json'
-                }
-              }).then(response => {
-                if (response.ok) {
-                  const formMessage = document.getElementById('form-message');
-                  if (formMessage) {
-                    formMessage.style.display = 'block';
-                    formMessage.classList.remove('hidden');
-                  }
-                  form.reset();
-                } else {
-                  response.json().then(data => {
-                    alert(data.error || 'Oops! There was a problem submitting your form.');
-                  });
-                }
-              }).catch(error => {
-                console.error('Form submission error:', error);
-                alert('Oops! There was a problem submitting your form.');
-              });
-            });
-        }
-    </script>
+  const form = event.target;
+  const formData = new FormData(form);
 
+  fetch('https://formspree.io/f/meogzazn', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById('form-message').style.display = 'block';
+      form.reset();
+    } else {
+      response.json().then(data => {
+        alert(data.error || 'Oops! There was a problem.');
+      });
+    }
+  }).catch(error => {
+    alert('Oops! There was a problem submitting your form.');
+  });
+});
+</script>
+<script>
+   window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const progress = Math.min(scrollTop / maxScroll, 1); // range: 0 to 1
+
+    // Stem growth
+    const stem = document.querySelector('.stem');
+    stem.style.height = `${progress * 120}px`;
+
+    // Leaf scale and rotation
+    const leaf = document.querySelector('.leaf');
+    const leafScale = Math.min(progress * 2, 1);
+    leaf.style.transform = `scaleY(${leafScale}) rotate(-110deg)`;
+
+    // Petals
+    const petals = document.querySelectorAll('.petal');
+    petals.forEach((petal, i) => {
+      const threshold = 0.6 + i * 0.05;
+      if (progress >= threshold) {
+        petal.style.opacity = '1';
+        petal.style.width = '40px';
+      } else {
+        petal.style.opacity = '0';
+        petal.style.width = '0px';
+      }
+    });
+
+    // Center dot
+    const dot = document.querySelector('.dot');
+    dot.style.opacity = progress > 0.95 ? '1' : '0';
+  });
+</script>
 </body>
 </html>
